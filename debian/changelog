@@ -1,0 +1,222 @@
+qpdfview (0.4.17~beta1+git20180709-2) unstable; urgency=medium
+
+  * QA upload.
+  * Rebuild against Qt 5.11.2.
+  * debian/control: Update Vcs-* fields; packaging repository is now
+    under Debian Qt/KDE Team.
+  * debian/patches: Add a patch to finish zh_CN translation.
+    All modifications have been forwarded upstream.
+
+ -- Boyuan Yang <byang@debian.org>  Fri, 26 Oct 2018 20:13:54 -0400
+
+qpdfview (0.4.17~beta1+git20180709-1) unstable; urgency=medium
+
+  * QA upload.
+  * New upstream trunk snapshot 20180709.
+  * Rebuild against gcc 8 and Qt 5.11.
+  * debian/control: Bump Standards-Version to 4.2.1 (no changes needed).
+  * debian/copyright: Refresh information.
+
+ -- Boyuan Yang <byang@debian.org>  Fri, 07 Sep 2018 14:00:03 -0400
+
+qpdfview (0.4.17~beta1+git20180514-1) unstable; urgency=medium
+
+  * QA upload.
+  * Set Maintainer to Debian QA Group.
+  * New upstream trunk snapshot. Closes: #847280.
+  * d/control: Bump Standards-Version to 4.1.4.
+  * d/control: Bump debhelper compat to v11.
+  * d/control: Point Vcs field onto Salsa packaging repo.
+  * d/control: Add missing build-dependency qt5-qmake as suggested in #886521.
+  * d/control: Use source:Version instead of binary:Version for arch:all package
+    recommendation to prevent breakage brought by binNMU. Closes: #857117.
+  * d/control: Add new build-dependency libsynctex-dev to use system synctex.
+    Closes: #754138.
+  * Apply "wrap-and-sort -abst".
+  * d/rules: Remove some custom flags with invocation of qmake;
+    Use dh_auto_configure again as suggested in #886521.
+  * d/rules: Use "dh_missing --fail-missing".
+  * d/menu: Remove menu file.
+  * d/xpm: Remove xpm icon, not needed.
+  * d/patches: Remove previous custom patches to provide a vanilla qpdfview.
+  * d/patches: Add patch to fix legacy appdata file format and installation
+    location.
+  * d/patches: Add patch to fix FTBCFS for pkg-config detection.
+    Closes: #886521.
+  * d/copyright: Refresh copyright information.
+  * d/install: Also install appdata file and new .so file.
+
+ -- Boyuan Yang <073plan@gmail.com>  Thu, 17 May 2018 08:43:56 +0800
+
+qpdfview (0.4.14-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Sun, 22 Mar 2015 11:42:36 +0200
+
+qpdfview (0.4.12-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fixed option to zoom to selection and implemented tiled rendering
+    (Closes: #739554)
+  * Enable support for qt5 and poppler-qt5.
+  * Explicit dependence on hicolor-icon-theme.
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Sun, 5 Oct 2014 17:08:15 +0100
+
+qpdfview (0.4.10-1) unstable; urgency=low
+
+  * New upstream release.
+  * Implemented an option to zoom to selection (Closes: #739554)
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Mon, 19 May 2014 14:39:20 +0100
+
+qpdfview (0.4.9-2) unstable; urgency=low
+
+  * Added zlib1g-dev as build-dependency (Closes: #744229)
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Fri, 25 Apr 2014 20:30:40 +0200
+
+qpdfview (0.4.9-1) unstable; urgency=low
+
+  * New upstream release.
+  * Implemented an option to copy selected text to X buffer (Closes: #739550)
+  * Updated watch file to check pgp signature.
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Sun, 23 Mar 2014 12:08:49 +0200
+
+qpdfview (0.4.8-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Sat, 25 Jan 2014 10:06:34 +0200
+
+qpdfview (0.4.7-1) unstable; urgency=low
+
+  * New upstream release.
+  * Patch to provide more toolbar items by default.
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Sun, 1 Dec 2013 13:26:44 +0200
+
+qpdfview (0.4.6-1) unstable; urgency=low
+
+  * New upstream release.
+  * Translations are now fetched in the separate package qpdfview-translations.
+  * qpdfview-translations "Replaces: qpdfview-languages" for compatibility with
+    Ubuntu PPAs.
+  * Qt5 support implemented upstream is unused in this package.
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Sun, 13 Oct 2013 10:56:55 +0100
+
+qpdfview (0.4.4-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Tue, 30 Jul 2013 00:00:25 +0100
+
+qpdfview (0.4.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Added menu file and fetch xpm icon file in debian folder.
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Sun, 26 May 2013 13:52:50 +0100
+
+qpdfview (0.4.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Added standard hardening buildflags from dpkg-dev using
+      QMAKE_CFLAGS="$(CFLAGS) $(CPPFLAGS)" QMAKE_CXXFLAGS="$(CFLAGS) \
+      $(CPPFLAGS) $(CXXFLAGS)" QMAKE_LFLAGS="$(LDFLAGS)"
+    as arguments for qmake. New build dependency: dpkg-dev (>=1.16.1.1)
+  * Added large file support using
+      DEFINES+="_FILE_OFFSET_BITS=64"
+    as argument for qmake.
+  * Adjusted Exit mnemonic. (Closes: #702749)
+    Thanks to David Fries <david@fries.net>
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Mon, 22 Apr 2013 17:40:43 +0100
+
+qpdfview (0.4.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Source package now builds three binary packages. New build dependencies:
+    libspectre-dev, libdjvulibre-dev
+  * Program now supports file type determination using "magic" numbers.
+    New build dependency: libmagic-dev
+  * Included SyncTeX copyright and license into debian/copyright.
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Thu, 4 Apr 2013 14:51:58 +0100
+
+qpdfview (0.3.7-2) unstable; urgency=low
+
+  * Fixed error in man page.
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Fri, 11 Jan 2013 14:21:14 +0200
+
+qpdfview (0.3.7-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fixed formatting of extended description in control file.
+  * New dependency libqt4-sql-sqlite.
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Wed, 2 Jan 2013 14:12:52 +0200
+
+qpdfview (0.3.6-1) unstable; urgency=low
+
+  * New upstream release.
+  * Updated description in control file.
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Sun, 25 Nov 2012 08:31:42 +0200
+
+qpdfview (0.3.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * Separate upstream changelog.
+  * Updated MIME file.
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Sun, 14 Oct 2012 18:13:01 +0200
+
+qpdfview (0.3.4-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Sun, 16 Sep 2012 19:32:36 +0200
+
+qpdfview (0.3.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Added MIME file. (Closes: #685599)
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Sun, 2 Sep 2012 15:18:34 +0100
+
+qpdfview (0.3.2-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Sat, 4 Aug 2012 16:36:37 +0100
+
+qpdfview (0.3.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Upstream resolved license incompatibility issues.
+  * Changed hotkeys for scaling. (Closes: #677448)
+    Thanks to jidanni@jidanni.org
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Sun, 1 Jul 2012 18:16:12 +0100
+
+qpdfview (0.3~beta3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Added watch file.
+  * Fixed a bug that occured on armel and armhf. (Closes: #677149)
+    Thanks to Peter Green <plugwash@p10link.net>
+  * Added build-dependency. (Closes: #677152)
+    Thanks to Pino Toscano <pino@debian.org>
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Tue, 12 Jun 2012 21:23:41 +0100
+
+qpdfview (0.3~beta2-1) unstable; urgency=low
+
+  * Initial release. (Closes: #674684)
+
+ -- Benjamin Eltzner <b.eltzner@gmx.de>  Fri, 01 Jun 2012 19:23:41 +0100

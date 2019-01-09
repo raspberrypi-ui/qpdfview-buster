@@ -3118,8 +3118,6 @@ QAction* MainWindow::createAction(const QString& text, const QString& objectName
     }
     else
     {
-        action->setIconVisibleInMenu(true);
-
         connect(action, SIGNAL(triggered()), member);
     }
 

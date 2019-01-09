@@ -502,7 +502,7 @@ public:
     class PageItem
     {
     public:
-        static int cacheSize() { return 32 * 1024; }
+        static int cacheSize() { return 128 * 1024; }
 
         static bool useTiling() { return false; }
         static int tileSize() { return 1024; }
@@ -511,7 +511,7 @@ public:
         static bool useDevicePixelRatio() { return false; }
 
         static bool decoratePages() { return true; }
-        static bool decorateLinks() { return true; }
+        static bool decorateLinks() { return false; }
         static bool decorateFormFields() { return true; }
 
         static QColor backgroundColor() { return Qt::darkGray; }
@@ -555,8 +555,8 @@ public:
 
         static int autoRefreshTimeout() { return 750; }
 
-        static bool prefetch() { return false; }
-        static int prefetchDistance() { return 1; }
+        static bool prefetch() { return true; }
+        static int prefetchDistance() { return 10; }
 
         static int prefetchTimeout() { return 250; }
 

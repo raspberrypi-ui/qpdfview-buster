@@ -1,11 +1,11 @@
 [Desktop Entry]
 Type=Application
 Terminal=false
-Name=qpdfview
-Icon=qpdfview
-GenericName=tabbed document viewer
-Comment=A tabbed document viewer using Qt and the Poppler library.
-Categories=Viewer;Office;
+Name=PDF Viewer
+Icon=xpdf
+GenericName=PDF Viewer
+Comment=Viewer for PDF files
+Categories=Viewer;Utility;
 Keywords=viewer;document;presentation;pdf;ps;djvu;
 TryExec=qpdfview
 Exec=qpdfview --unique %F

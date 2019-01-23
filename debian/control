@@ -32,6 +32,7 @@ Recommends:
  qpdfview-djvu-plugin (= ${binary:Version}),
  qpdfview-ps-plugin (=${binary:Version}),
  qpdfview-translations (=${source:Version}),
+ qt5ct, qt5-style-plugins
 Description: tabbed document viewer
  qpdfview is a simple tabbed document viewer which uses the Poppler library for
  PDF rendering and CUPS for printing and provides a clear and simple Qt
